@@ -1,6 +1,15 @@
+import React from "react";
+import MyHeader from './components/header/MyHeader'
+import Albums from './components/albums/Albums'
 
-export default function Home() {
+export default async function Home() {
+  const res = await fetch('https://jsonplaceholder.typicode.com/photos')
+  const data = await res.json()
+  console.log(data)
   return (
-    <h1>Hi</h1>
-  );
+    <main>
+      <MyHeader />
+      <Albums data={data} />
+    </main>
+  )
 }
