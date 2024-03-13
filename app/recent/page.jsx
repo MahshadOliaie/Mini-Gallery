@@ -1,3 +1,4 @@
+import Photo from "../components/photo/Photo"
 
 
 async function RecentPage() {
@@ -13,7 +14,7 @@ async function RecentPage() {
             <h1 className="p-10 text-xl font-semibold text-white fixed">Recent</h1>
             <div className="grid grid-cols-3 w-full gap-1">
                 {data.map(item => {
-                    return <div className="w-full aspect-square bg-center bg-cover" style={{ backgroundImage: `url(${item.url})` }}></div>
+                    return <Photo url={item.url}/>
                 })}
             </div>
         </>
