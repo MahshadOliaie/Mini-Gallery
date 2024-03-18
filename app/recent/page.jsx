@@ -8,13 +8,14 @@ async function RecentPage() {
         }
     })
     const data = await res.json()
+
     return (
         <>
             <div className="w-full fixed bg-black opacity-5"></div>
             <h1 className="p-10 text-xl font-semibold text-white fixed">Recent</h1>
             <div className="grid grid-cols-3 w-full gap-1">
                 {data.map(item => {
-                    return <Photo url={item.url}/>
+                    return <Photo url={item.url} id={item.id}/>
                 })}
             </div>
         </>
